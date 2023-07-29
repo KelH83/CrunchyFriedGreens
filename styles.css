@@ -10,6 +10,16 @@ body{
   padding: 0px;    
 }
 
+.navbar-button{
+  font-size: 15px;
+  font-family: shrikhand;
+  background-color: #00bf63;
+  color:#fff;
+  padding: 5px 5px;
+  margin: 10px;
+  border-radius: 15px;
+}
+
 .special-offer { 
   grid-area: special; 
   background-color: #fff;  
@@ -139,7 +149,7 @@ body{
   display: grid;
   grid-template-areas:
   'banner banner banner banner banner banner '
-  'basket basket basket basket basket basket'
+  'navbar navbar navbar navbar navbar navbar'
   'items items items items items items'
   'footer footer footer footer footer footer';
   gap: 10px;
@@ -163,11 +173,10 @@ body{
   width:100%;
 }
 
-.basket { 
-  grid-area: basket; 
+.navbar { 
+  grid-area: navbar; 
   background-color: #fff;  
   position:fixed;
-  top: 210px;
   left: 0px;
   width:100%;
   text-align: center;
@@ -190,7 +199,7 @@ body{
   gap: 10px;
   background-color: #fff;
   padding: 0px 5px;
-  margin-top:220px;
+  margin-top:280px;
 }
       
 .menu-inner-container > div {      
@@ -201,8 +210,8 @@ body{
 
 .menu-images{
   margin-top:25px;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   border: 3px solid #00bf63;
 }
 
@@ -213,13 +222,17 @@ body{
   font-size: 20px;
   border: 2px solid #000;
   border-radius: 20px;
-  padding: 10px 40px;
+  padding: 10px 20px;
 }
 
-.basket p{
+.navbar p{
   font-size: 18px;
-  margin:7px;
+  margin:7px 7px 0px 7px;
   text-align: center;
+  background-color: #00bf63;
+  color:#fff;
+  padding: 4px;
+
 }
 
 #view-cart{
@@ -422,4 +435,61 @@ input[type=submit]:hover {
   height: 30%;
 }
 
+/*Basket & menu */
+
+.navbar .flashOn{
+  background-color: #000;
+  color:#00bf63;
+  font-size: 20px;
+}
+
+.buttonFlashOn{
+  background-color: #fff;
+  color:#00bf63;
+}
+
+.box{
+  border: 1px solid gray;
+  padding: 4px;
+  margin: 0px 10px;
+}
+
+.view-cart{
+  font-size: 15px;
+  font-family: shrikhand;
+  background-color: #fff;
+  color:#00bf63;
+  padding: 5px 5px;
+  margin: 10px;
+  border-radius: 15px;
+}
+
+ul{
+  list-style: none;
+}
+
+li{
+  padding: 5px 0px;
+}
+
+#basket-container{
+  float:left;
+}
+
+#basket-prices-container{
+  float:right;
+}
+
+#fruit-platter{
+  text-align: center;
+  background-color: #00bf63;
+  padding: 5px;
+  font-family: shrikhand;
+  border-radius: 15px;;
+}
+
+.cart-button:hover{
+  background-color: #fff;
+  color:#00bf63;
+}
 
