@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crunchy Fried Greens</title>
+    <link href="./styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+
+</head>
+<body onload="moveBasketAcross()">
+  <div class="special-container">
+    <div class="banner"><a href="index.html"><img src="./images/CFGbanner.png"/></a>
+    </div>
+
+    <div class="menu">
+      <a href="menu.html"><button class="side-menu-buttons menu-button"><img class="special-images" src="./images/menu2.png" alt="menu logo"/>Menu</button></a>
+          <br>
+          <a href="reviews.html"><button class="side-menu-buttons review-button"><img class="special-images" src="./images/star.png" alt="review logo"/>Reviews</button></a>
+          <br>
+          <a href="support.html"><button class="side-menu-buttons support-button"><img class="special-images" src="./images/support.png" alt="menu logo"/>Support</button></a>
+    </div>
+     
+     <div class="offer">
+       <div class="main-inner-container">
+         <div class="left-container">
+          <h2>Items ordered</h2>
+          <div id="basket-container">
+            <ul id="basket-content">
+            
+            </ul>
+          </div>
+          
+          <div id="basket-prices-container">
+            <ul id="basket-prices">
+            
+            </ul>
+            <h4 id="fruit-platter"></h4>
+          </div>
+          
+          
+          </div>
+         <div class="right-container">
+          <h2>SubTotal</h2>
+          <p id="subtotal"></p>
+          <h2>Delivery</h2>
+          <p id="delivery"></p>
+          <h2>Total:</h2>
+          <p id="final-total"></p>
+           <button class="nav-buttons">Checkout</button>
+         </div>
+       
+       </div>
+     </div>
+ 
+     <div class="footer">
+      <p id="copyright">Registered company number 8793588741<br>
+        © Copyright CFG <span class="year"></span></p>
+      <img class="social-media" src="./images/facebook.png"/>
+      <img class="social-media" src="./images/twitter2.png"/>
+      <img class="social-media" src="./images/snapchat.png"/>
+      <p id="contact">01234 567 8910<br>
+      customerservices@crunchyfriedgreens.com</p>
+     </div>
+       
+   </div>  
+ <script src="./main.js"></script>
+ </body>
+ </html>
