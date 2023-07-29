@@ -493,3 +493,8 @@ li{
   color:#00bf63;
 }
 
+/*Media queries*/
+@media (max-width: 500px) {
+.menu-container .items .menu-inner-container > div{      
+  font-size: 0.75rem;
+}
