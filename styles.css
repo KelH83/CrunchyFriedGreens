@@ -173,7 +173,7 @@ body{
   width:100%;
 }
 
-.navbar { 
+.menu-container .navbar { 
   grid-area: navbar; 
   background-color: #fff;  
   position:fixed;
