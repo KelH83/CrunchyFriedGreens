@@ -9,102 +9,229 @@ year[i].textContent = date.getFullYear();
 
 let total = 0.0;
 let totalItems = 0
+let delivery;
+let finalTotal;
 let basketItems = [];
+let saladCount = 0;
+let feastCount = 0;
+let pokeCount = 0;
+let roastCount = 0;
+let medMixCount = 0;
+let burgerCount = 0;
+let curryCount = 0;
+let lasagnaCount = 0;
+let pizzaCount = 0;
+let quicheCount = 0;
+
 document.getElementById("total").textContent = total;
 document.getElementById("totalItems").textContent = totalItems;
 
-
+//Menu page
+//Add items to cart
 function addToCart(item){
 if (item == 'salad'){
     total += 14.99;
     totalItems ++;
-    basketItems.push({name: 'Superfood Salad', price: 14.99});
-    document.getElementById("salad-button").textContent = "Added";
-    document.getElementById("salad-button").style.backgroundColor = "#fff";
-    document.getElementById("salad-button").style.color = "#00bf63";
-
+    saladCount ++;
+    basketItems.push({name:'Superfood salad', price: 14.99});
+    document.getElementById("salad-box").textContent = saladCount;
+    
 }
 else if(item == 'famfeast'){
     total += 25.99;
     totalItems++
+    feastCount ++;
     basketItems.push({name: 'Family Feast', price: 25.99});
-    document.getElementById("feast-button").textContent = "Added";
-    document.getElementById("feast-button").style.backgroundColor = "#fff";
-    document.getElementById("feast-button").style.color = "#00bf63";
+    document.getElementById("feast-box").textContent = feastCount;
 
 }
 else if(item == 'poke'){
     total += 12.99;
-    totalItems++
-    basketItems.push({name: 'Poke Bowl', price: 12.99});
-    document.getElementById("poke-button").textContent = "Added";
-    document.getElementById("poke-button").style.backgroundColor = "#fff";
-    document.getElementById("poke-button").style.color = "#00bf63";
+    totalItems++;
+    pokeCount ++;
+    basketItems.push({name: 'Poke Bowl', price: 12.99});   
+    document.getElementById("poke-box").textContent = pokeCount;
+   
 }
 else if(item == 'roast'){
     total += 28.99;
-    totalItems++
+    totalItems++;
+    roastCount++;
     basketItems.push({name: 'Vegetable Roast', price: 28.99});
-    document.getElementById("roast-button").textContent = "Added";
-    document.getElementById("roast-button").style.backgroundColor = "#fff";
-    document.getElementById("roast-button").style.color = "#00bf63";
+    document.getElementById("roast-box").textContent = roastCount;
+    
 }
 else if(item == 'medmix'){
     total += 14.99;
-    totalItems++
+    totalItems++;
+    medMixCount ++;
     basketItems.push({name: 'Meditteranean Mix Bowl', price: 14.99});
-    document.getElementById("medmix-button").textContent = "Added";
-    document.getElementById("medmix-button").style.backgroundColor = "#fff";
-    document.getElementById("medmix-button").style.color = "#00bf63";
+    document.getElementById("medMix-box").textContent = medMixCount;
 }
 else if(item == 'burger'){
     total += 16.99;
-    totalItems++
+    totalItems++;
+    burgerCount ++;
     basketItems.push({name: 'Meat free burger', price: 16.99});
-    document.getElementById("burger-button").textContent = "Added";
-    document.getElementById("burger-button").style.backgroundColor = "#fff";
-    document.getElementById("burger-button").style.color = "#00bf63";
+    document.getElementById("burger-box").textContent = burgerCount;
 }
 else if(item == 'curry'){
     total += 13.99;
-    totalItems++
+    totalItems++;
+    curryCount++;
     basketItems.push({name: 'Veggie Curry', price: 13.99});
-    document.getElementById("curry-button").textContent = "Added";
-    document.getElementById("curry-button").style.backgroundColor = "#fff";
-    document.getElementById("curry-button").style.color = "#00bf63";
+    document.getElementById("curry-box").textContent = curryCount;
 }
 else if(item == 'lasagna'){
     total += 15.99;
-    totalItems++
+    totalItems++;
+    lasagnaCount ++;
     basketItems.push({name: 'Veggie Lasagna', price: 15.99});
-    document.getElementById("lasagna-button").textContent = "Added";
-    document.getElementById("lasagna-button").style.backgroundColor = "#fff";
-    document.getElementById("lasagna-button").style.color = "#00bf63";
+    document.getElementById("lasagna-box").textContent = lasagnaCount;
 }
 else if(item == 'pizza'){
     total += 11.99;
-    totalItems++
+    totalItems++;
+    pizzaCount ++;
     basketItems.push({name: 'Vegetable Pizza', price: 11.99});
-    document.getElementById("pizza-button").textContent = "Added";
-    document.getElementById("pizza-button").style.backgroundColor = "#fff";
-    document.getElementById("pizza-button").style.color = "#00bf63";
+    document.getElementById("pizza-box").textContent = pizzaCount;
 }
 else{
     total += 16.99
-    totalItems++
+    totalItems++;
+    quicheCount ++
     basketItems.push({name:'Veggie stuffed quiche', price: 16.99});
-    document.getElementById("quiche-button").textContent = "Added";
-    document.getElementById("quiche-button").style.backgroundColor = "#fff";
-    document.getElementById("quiche-button").style.color = "#00bf63";
+    document.getElementById("quiche-box").textContent = quicheCount;
 }
-
+flashOn();
 document.getElementById("total").textContent = Math.trunc(total*100)/100;
 localStorage.setItem("total", Math.trunc(total*100)/100);
 document.getElementById("totalItems").textContent = totalItems;
-localStorage.setItem("numberOfItems", totalItems);
+}
+//
+//Remove items from cart
+
+function remove(item){
+    if (item == 'salad'){
+        total -= 14.99;
+        totalItems --;
+        saladCount --;
+        document.getElementById("salad-box").textContent = saladCount;
+        let removeThis = basketItems.find(o => o.name === 'Superfood salad');
+        let itemIndex = basketItems.indexOf(removeThis);
+        basketItems.splice(itemIndex, 1);
+    }
+    else if(item == 'famfeast'){
+        total -= 25.99;
+        totalItems--;
+        feastCount --;
+        document.getElementById("feast-box").textContent = feastCount;
+        let removeThis = basketItems.find(o => o.name === 'Family Feast');
+        let itemIndex = basketItems.indexOf(removeThis);
+        basketItems.splice(itemIndex, 1);
+    
+    }
+    else if(item == 'poke'){
+        total -= 12.99;
+        totalItems--;
+        pokeCount --;
+        document.getElementById("poke-box").textContent = pokeCount;
+        let removeThis = basketItems.find(o => o.name === 'Poke Bowl');
+        let itemIndex = basketItems.indexOf(removeThis);
+        basketItems.splice(itemIndex, 1);
+       
+    }
+    else if(item == 'roast'){
+        total -= 28.99;
+        totalItems--;
+        roastCount--;
+        document.getElementById("roast-box").textContent = roastCount;
+        let removeThis = basketItems.find(o => o.name === 'Vegetable Roast');
+        let itemIndex = basketItems.indexOf(removeThis);
+        basketItems.splice(itemIndex, 1);
+        
+    }
+    else if(item == 'medmix'){
+        total -= 14.99;
+        totalItems--;
+        medMixCount --;
+        document.getElementById("medMix-box").textContent = medMixCount;
+        let removeThis = basketItems.find(o => o.name === 'Meditteranean Mix Bowl');
+        let itemIndex = basketItems.indexOf(removeThis);
+        basketItems.splice(itemIndex, 1);
+    }
+    else if(item == 'burger'){
+        total -= 16.99;
+        totalItems--;
+        burgerCount --;
+        document.getElementById("burger-box").textContent = burgerCount;
+        let removeThis = basketItems.find(o => o.name === 'Meat free burger');
+        let itemIndex = basketItems.indexOf(removeThis);
+        basketItems.splice(itemIndex, 1);
+    }
+    else if(item == 'curry'){
+        total -= 13.99;
+        totalItems--;
+        curryCount--;
+        document.getElementById("curry-box").textContent = curryCount;
+        let removeThis = basketItems.find(o => o.name === 'Veggie Curry');
+        let itemIndex = basketItems.indexOf(removeThis);
+        basketItems.splice(itemIndex, 1);
+    }
+    else if(item == 'lasagna'){
+        total -= 15.99;
+        totalItems--;
+        lasagnaCount --;
+        document.getElementById("lasagna-box").textContent = lasagnaCount;
+        let removeThis = basketItems.find(o => o.name === 'Veggie Lasagna');
+        let itemIndex = basketItems.indexOf(removeThis);
+        basketItems.splice(itemIndex, 1);
+    }
+    else if(item == 'pizza'){
+        total -= 11.99;
+        totalItems--;
+        pizzaCount --;
+        document.getElementById("pizza-box").textContent = pizzaCount;
+        let removeThis = basketItems.find(o => o.name === 'Vegetable Pizza');
+        let itemIndex = basketItems.indexOf(removeThis);
+        basketItems.splice(itemIndex, 1);
+    }
+    else{
+        total -= 16.99
+        totalItems--;
+        quicheCount --;
+        document.getElementById("quiche-box").textContent = quicheCount;
+        let removeThis = basketItems.find(o => o.name === 'Veggie stuffed quiche');
+        let itemIndex = basketItems.indexOf(removeThis);
+        basketItems.splice(itemIndex, 1);
+    }
+    flashOn();
+    document.getElementById("total").textContent = Math.trunc(total*100)/100;
+    localStorage.setItem("total", Math.trunc(total*100)/100);
+    document.getElementById("totalItems").textContent = totalItems;
+    
+    }
+
+//
+
+//Flash function
+
+function flashOn(){
+    let changeColor = document.getElementById("basketBar").classList;
+    changeColor.add("flashOn");
+    setTimeout(flashOff,300);
+}
+      
+function flashOff(){
+    let changeColor = document.getElementById("basketBar").classList;
+    changeColor.remove("flashOn");
 }
 
+//End of menu page
 
+
+
+//Start of reviews page
 function intervalStart(){
     setInterval(reviews, 8000);
 }
@@ -152,8 +279,70 @@ function review5(){
 document.getElementById("reviewText").innerHTML = '<img src="./images/quiche.jpg" class="review-images" alt="quiche image" /><h2 class="green">Everything is great</h2><h3>I think I\'ve tried everything from CFG and it has all been great, customer for life!</h3><h2 class="green">~Nick</h2>';
 }
 
+//End of reviews page
+
+//Start of support page
+
 function thanks(){
     document.getElementById("contact-form").innerHTML = '<img class="customer-service" src="./images/customerservice.png" alt="customer service image"/><h2>Thank you for your message we will be in touch as soon as we can<br>If your enquiry is urgent please call us on <span class="green">01234 567 8910</span></h2>'
 }
+
+//End of support page
+
+//Start of basket page
+
+function goToBasket(){
+    localStorage.setItem("basketItems", JSON.stringify(basketItems));
+}
+
+
+function moveBasketAcross(){
+let total = localStorage.getItem("total");
+
+document.getElementById("subtotal").textContent = total;
+if (total <50){
+let cartTotal = Number(total);
+let delivery = 3.99;
+let calculateTotal = cartTotal+delivery;
+finalTotal = Math.trunc(calculateTotal*100)/100;
+document.getElementById("delivery").textContent = delivery;
+document.getElementById("final-total").textContent = finalTotal;
+listBasketItems();
+listBasketPrices()
+}
+else{
+let cartTotal = Number(total);
+let delivery = 0;
+let calculateTotal = cartTotal + delivery;
+finalTotal = Math.trunc(calculateTotal*100)/100;
+document.getElementById("delivery").textContent = delivery;
+document.getElementById("final-total").textContent = finalTotal;
+listBasketItems();
+listBasketPrices()
+document.getElementById("fruit-platter").textContent = "*Plus FREE fruit platter";
+}
+
+}
+
+
+function listBasketItems(){
+    let basketContentItems = document.getElementById("basket-content");
+    cartItems = JSON.parse(localStorage.getItem("basketItems")) || [];
+    for (let i=0; i<cartItems.length; i++) {
+        const newElement = document.createElement("li");
+        newElement.textContent = cartItems[i].name;
+        basketContentItems.appendChild(newElement);
+    }
+  }
+
+  function listBasketPrices(){
+    let basketContentPrices = document.getElementById("basket-prices");
+    cartItems = JSON.parse(localStorage.getItem("basketItems")) || [];
+    for (let i=0; i<cartItems.length; i++) {
+        const newElement = document.createElement("li");
+        newElement.textContent = cartItems[i].price;
+        basketContentPrices.appendChild(newElement);
+    }
+  }
 
 
