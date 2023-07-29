@@ -10,7 +10,7 @@ body{
   padding: 0px;    
 }
 
-#menu-banner .navbar .navbar-button{
+#menu-banner .navbar a .navbar-button{
   font-size: 15px;
   font-family: shrikhand;
   background-color: #00bf63;
