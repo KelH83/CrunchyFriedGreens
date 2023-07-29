@@ -13,11 +13,13 @@
   <div class="menu-container">
     <div id="menu-banner">
     <a href="index.html"><banner"><img src="./images/CFGbanner.png"/></a>
-    </div>
-
-    <div class="basket">
-     <p>Basket Items: <span id="totalItems"></span>     Total: £<span id="total"></span></p>
-     </div>
+    <div class="navbar">
+      <a href="index.html"><button class="navbar-button">Home</button></a>
+      <a href="reviews.html"><button class="navbar-button">Reviews</button></a>
+      <a href="specials.html"><button class="navbar-button">Specials</button></a>
+      <a href="support.html"><button class="navbar-button">Support</button></a>
+      <p id="basketBar">Basket Items: <span id="totalItems"></span>     Total: £<span id="total"></span><a href="basket.html"><button class="view-cart" onClick="goToBasket()">View cart</button></a></p>
+     </div></div>
 
     <div class="items">
       <div class="menu-inner-container">
@@ -27,7 +29,7 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fermentum sed lacus sed convallis.
              Vestibulum id gravida est, eleifend aliquam sapien</p>
           <h3>£14.99</h3>
-          <button class="cart-button" onClick="addToCart('salad')" id="salad-button">Add to cart</button>
+          <button class="cart-button" onClick="remove('salad')">-</button><span class="box" id="salad-box">0</span><button class="cart-button" onClick="addToCart('salad')">+</button>
         </div>
         <div class="item2">
           <img class="menu-images" src="./images/greenfeast.jpg" alt="large vegetable dish image"/>
@@ -35,7 +37,7 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fermentum sed lacus sed convallis.
             Vestibulum id gravida est, eleifend aliquam sapien</p>
           <h3>£25.99</h3>
-          <button class="cart-button" onClick="addToCart('famfeast')" id="feast-button">Add to cart</button>
+          <button class="cart-button" onClick="remove('famfeast')">-</button><span class="box" id="feast-box">0</span><button class="cart-button" onClick="addToCart('famfeast')">+</button>
         </div>
         <div class="item3">
           <img class="menu-images" src="./images/pokebowl.jpg" alt="poke bowl image"/>
@@ -43,7 +45,7 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fermentum sed lacus sed convallis.
             Vestibulum id gravida est, eleifend aliquam sapien</p>
           <h3>£12.99</h3>
-          <button class="cart-button" onClick="addToCart('poke')" id="poke-button">Add to cart</button>
+          <button class="cart-button" onClick="remove('poke')">-</button><span class="box" id="poke-box">0</span><button class="cart-button" onClick="addToCart('poke')">+</button>
         </div>
         <div class="item4">
           <img class="menu-images" src="./images/vegroast.jpg" alt="veg roast image"/>
@@ -51,7 +53,7 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fermentum sed lacus sed convallis.
             Vestibulum id gravida est, eleifend aliquam sapien</p>
           <h3>£28.99</h3>
-          <button class="cart-button" onClick="addToCart('roast')" id="roast-button">Add to cart</button>
+          <button class="cart-button" onClick="remove('roast')">-</button><span class="box" id="roast-box">0</span><button class="cart-button" onClick="addToCart('roast')">+</button>
         </div>
         <div class="item5">
           <img class="menu-images" src="./images/medmixbowl.jpg" alt="med bowl image"/>
@@ -59,7 +61,7 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fermentum sed lacus sed convallis.
             Vestibulum id gravida est, eleifend aliquam sapien</p>
           <h3>£14.99</h3>
-          <button class="cart-button" onClick="addToCart('medmix')" id="medmix-button">Add to cart</button>
+          <button class="cart-button" onClick="remove('medmix')">-</button><span class="box" id="medMix-box">0</span><button class="cart-button" onClick="addToCart('medmix')">+</button>
         </div>
         <div class="item6">
           <img class="menu-images" src="./images/vegburger.jpg" alt="veg burger image"/>
@@ -67,7 +69,7 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fermentum sed lacus sed convallis.
             Vestibulum id gravida est, eleifend aliquam sapien</p>
           <h3>£16.99</h3>
-          <button class="cart-button" onClick="addToCart('burger')" id="burger-button">Add to cart</button>
+          <button class="cart-button" onClick="remove('burger')">-</button><span class="box" id="burger-box">0</span><button class="cart-button" onClick="addToCart('burger')">+</button>
         </div>
         <div class="item7">
           <img class="menu-images" src="./images/vegcurry.jpg" alt="veg curry image"/>
@@ -75,14 +77,14 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fermentum sed lacus sed convallis.
             Vestibulum id gravida est, eleifend aliquam sapien</p>
           <h3>£13.99</h3>
-          <button class="cart-button" onClick="addToCart('curry')" id="curry-button">Add to cart</button>
+          <button class="cart-button" onClick="remove('curry')">-</button><span class="box" id="curry-box">0</span><button class="cart-button" onClick="addToCart('curry')">+</button>
         </div>
         <div class="item8"> <img class="menu-images" src="./images/lasagna.jpg" alt="veg lasagna image"/>
           <h3>Veggie Lasagna</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fermentum sed lacus sed convallis.
             Vestibulum id gravida est, eleifend aliquam sapien</p>
           <h3>£15.99</h3>
-          <button class="cart-button" onClick="addToCart('lasagna')" id="lasagna-button">Add to cart</button>
+          <button class="cart-button" onClick="remove('lasagna')">-</button><span class="box" id="lasagna-box">0</span><button class="cart-button" onClick="addToCart('lasagna')">+</button>
         </div>
         <div class="item9">
           <img class="menu-images" src="./images/pizza.jpg" alt="veg pizza image"/>
@@ -90,7 +92,7 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fermentum sed lacus sed convallis.
             Vestibulum id gravida est, eleifend aliquam sapien</p>
           <h3>£11.99</h3>
-          <button class="cart-button" onClick="addToCart('pizza')" id="pizza-button">Add to cart</button>
+          <button class="cart-button" onClick="remove('pizza')">-</button><span class="box" id="pizza-box">0</span><button class="cart-button" onClick="addToCart('pizza')">+</button>
         </div>
         <div class="item10">
           <img class="menu-images" src="./images/quiche.jpg" alt="quiche image"/>
@@ -98,7 +100,7 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fermentum sed lacus sed convallis.
             Vestibulum id gravida est, eleifend aliquam sapien</p>
           <h3>£16.99</h3>
-          <button class="cart-button" onClick="addToCart('quiche')" id="quiche-button">Add to cart</button>
+          <button class="cart-button" onClick="remove('quiche')">-</button><span class="box" id="quiche-box">0</span><button class="cart-button" onClick="addToCart('quiche')">+</button>
         </div>
       </div>
     </div>
