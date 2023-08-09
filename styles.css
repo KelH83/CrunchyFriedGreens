@@ -199,7 +199,7 @@ body{
   gap: 10px;
   background-color: #fff;
   padding: 0px 5px;
-/*   margin-top:20px; */
+  margin-top:20px;
 }
       
 .menu-inner-container > div {      
@@ -209,36 +209,7 @@ body{
 }
 
 .items .menu-inner-container > div{
-/*   margin-top: 700px; */
-}
-
-.items .menu-inner-container p{
-  font-size: 0.90rem;
-}
-
-
-.items .menu-inner-container .item1{
-  margin-top: 300px;
-}
-
-.items .menu-inner-container .item1 p{
-  margin-top: 300px;
-}
-
-.items .menu-inner-container .item2{
-  margin-top: 300px;
-}
-
-.items .menu-inner-container .item3{
-  margin-top: 300px;
-}
-
-.items .menu-inner-container .item4{
-  margin-top: 300px;
-}
-
-.items .menu-inner-container .item5{
-  margin-top: 300px;
+  margin-top: 700px;
 }
 
 .menu-images{
