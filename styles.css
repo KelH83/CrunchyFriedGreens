@@ -199,13 +199,14 @@ body{
   gap: 10px;
   background-color: #fff;
   padding: 0px 5px;
-  margin-top:300px;
+  margin-top:20px;
 }
       
 .menu-inner-container > div {      
   text-align: center;
   padding: 0px;
   font-size: 20px;
+  margin-top: 300px
 }
 
 .menu-images{
