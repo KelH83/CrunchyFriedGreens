@@ -199,7 +199,7 @@ body{
   gap: 10px;
   background-color: #fff;
   padding: 0px 5px;
-  margin-top:20px;
+  margin-top:280px;
 }
       
 .menu-inner-container > div {      
@@ -208,8 +208,8 @@ body{
   font-size: 20px;
 }
 
-.items .menu-inner-container > div{
-  margin-top: 700px;
+.items .menu-inner-container > div p{
+  font-size: 15px;
 }
 
 .menu-images{
