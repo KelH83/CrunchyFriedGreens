@@ -199,7 +199,7 @@ body{
   gap: 10px;
   background-color: #fff;
   padding: 0px 5px;
-  margin-top:20px;
+/*   margin-top:20px; */
 }
       
 .menu-inner-container > div {      
@@ -209,7 +209,32 @@ body{
 }
 
 .items .menu-inner-container > div{
-  margin-top: 700px;
+/*   margin-top: 700px; */
+}
+
+.items .menu-inner-container p{
+  font-size: 15px;
+}
+
+
+.item1{
+  margin-top: 300px;
+}
+
+.item2{
+  margin-top: 300px;
+}
+
+.item3{
+  margin-top: 300px;
+}
+
+.item4{
+  margin-top: 300px;
+}
+
+.item5{
+  margin-top: 300px;
 }
 
 .menu-images{
