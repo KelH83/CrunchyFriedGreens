@@ -500,12 +500,12 @@ li{
 }
 }
 
-.navbar .navbar-button:hover{
+#menu-banner .navbar .navbar-button:hover{
   background-color: #fff;
   color: #00bf63;
 }
 
-.view-cart:hover{
+#menu-banner .view-cart:hover{
   background-color: #00bf63;
   color: #fff;
 }
