@@ -208,7 +208,7 @@ body{
   font-size: 20px;
 }
 
-.items .menu-inner-container{
+.items .menu-inner-container > div{
   margin-top: 300px;
 }
 
