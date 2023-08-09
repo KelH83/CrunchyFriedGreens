@@ -213,27 +213,27 @@ body{
 }
 
 .items .menu-inner-container p{
-  font-size: 15px;
+  font-size: 0.90rem;
 }
 
 
-.item1{
+.items .menu-inner-container .item1{
   margin-top: 300px;
 }
 
-.item2{
+.items .menu-inner-container .item2{
   margin-top: 300px;
 }
 
-.item3{
+.items .menu-inner-container .item3{
   margin-top: 300px;
 }
 
-.item4{
+.items .menu-inner-container .item4{
   margin-top: 300px;
 }
 
-.item5{
+.items .menu-inner-container .item5{
   margin-top: 300px;
 }
 
