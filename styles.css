@@ -499,3 +499,13 @@ li{
   font-size: 0.75rem;
 }
 }
+
+.navbar .navbar-button:hover{
+  background-color: #fff;
+  color: #00bf63;
+}
+
+.view-cart:hover{
+  background-color: #00bf63;
+  color: #fff;
+}
