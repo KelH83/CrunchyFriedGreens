@@ -5,6 +5,7 @@ As I finished my restaurant site quite quickly I also took the opportunity to cr
 
 
 <b>Project guidelines</b>
+
 You can create the web app of your dreams!! Anything you can think of, now’s your time to make it!
 
 You should:
